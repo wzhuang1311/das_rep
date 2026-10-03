@@ -195,7 +195,7 @@ if __name__ == "__main__":
     parser.add_argument("--save", type=str, default="__",
                         help="path to save model")
     '''model parameters'''
-    rootpath = '/das_data'
+    rootpath = r'D:\汕头大学\科研\深度学习\text.demo\das_data'
     parser.add_argument("--root", type=str, default=rootpath + '/train',
                         help="rootpath of traindata")
     parser.add_argument("--root2", type=str, default=rootpath + '/test',
