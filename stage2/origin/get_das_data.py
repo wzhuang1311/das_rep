@@ -21,12 +21,15 @@ def get_feature_list(data):                     # 10000,12
 
 def get_das_data(rootpath, labelpath):
     datapath = rootpath
-    file = open(labelpath)
+    file = open(labelpath, encoding='utf-8-sig')     # 【修复】utf-8-sig 兼容带/不带 BOM 的文本文件
     name_list = []
     for f in file:
         name_list.append(f)
     temp = np.empty([len(name_list), 12, 32])
     label_temp = np.empty(len(name_list))
+    print("开始特征提取，共 %d 个样本（每 200 个报一次进度）" % len(name_list))   # 【新增】进度提示
+    import time as _time                                                  # 【新增】
+    _t0 = _time.time()                                                    # 【新增】
     for i in range(len(name_list)):
         path = datapath + name_list[i].split(' ')[0]
         rawdata = scio.loadmat(path)['data']              # 原始数据 10000,12
@@ -38,6 +41,14 @@ def get_das_data(rootpath, labelpath):
         temp[i, :, :] = feature_data
         label = int(name_list[i].split(' ')[1])
         label_temp[i] = label
+        # ---------- 【新增】进度输出 ----------
+        if (i + 1) % 200 == 0 or (i + 1) == len(name_list):
+            _el = _time.time() - _t0
+            _eta = _el / (i + 1) * (len(name_list) - i - 1)
+            print("  进度 %d/%d (%.1f%%)  已用 %.1f 分钟  预计还需 %.1f 分钟"
+                  % (i + 1, len(name_list), (i + 1) * 100.0 / len(name_list),
+                     _el / 60, _eta / 60))
     temp = temp.reshape(len(name_list), -1)  # 样本量，12*32（展平）
+    print("特征提取完成，总耗时 %.1f 分钟\n" % ((_time.time() - _t0) / 60))   # 【新增】
     return temp, label_temp
 

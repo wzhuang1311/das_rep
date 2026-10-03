@@ -3,14 +3,15 @@ import sys
 class Logger(object):
     def __init__(self, filename='default.log', stream=sys.stdout):
         self.terminal = stream
-        self.log = open(filename, 'w')
+        self.log = open(filename, 'w', encoding='utf-8')
 
     def write(self, message):
         self.terminal.write(message)
         self.log.write(message)
+        self.log.flush()          # 【修复】写完立即刷盘，否则脚本跑一半看不到任何日志
 
     def flush(self):
-        pass
+        self.log.flush()          # 【修复】原来是 pass，flush 形同虚设
 sys.stdout = Logger('svm_result.log', sys.stdout)
 import datetime
 from sklearn import svm, preprocessing
