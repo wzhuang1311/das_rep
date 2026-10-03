@@ -3,14 +3,15 @@ import sys
 class Logger(object):
     def __init__(self, filename='default.log', stream=sys.stdout):
         self.terminal = stream
-        self.log = open(filename, 'w')
+        self.log = open(filename, 'w', encoding='utf-8')
 
     def write(self, message):
         self.terminal.write(message)
         self.log.write(message)
+        self.log.flush()          # 【修复】写完立即刷盘，否则跑一小时也看不到日志
 
     def flush(self):
-        pass
+        self.log.flush()          # 【修复】原来是 pass，flush 形同虚设
 sys.stdout = Logger('result.log', sys.stdout)
 import argparse
 import numpy as np
@@ -44,7 +45,7 @@ def test(model, dataset, criterion):
         feature, probs = model(batch_x)# feature  20,400
         batch_label = batch_y.unsqueeze(1).float()
         feature_label = torch.cat((feature, batch_label), dim=1)
-        feature_list = torch.cat((feature_list, feature_label), dim=0)   # feature_list
+        feature_list = torch.cat((feature_list.cpu(), feature_label.cpu()), dim=0)   # feature_list
         loss = criterion(probs, batch_y)
         _, pred = torch.max(probs, dim=1)
         predi = pred.tolist()

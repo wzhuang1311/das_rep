@@ -1,0 +1,71 @@
+Epoch 0 Val_accuracy 0.324 Val_loss 1.637
+Epoch 1 Val_accuracy 0.403 Val_loss 1.464
+Epoch 2 Val_accuracy 0.494 Val_loss 1.257
+Epoch 3 Val_accuracy 0.607 Val_loss 0.977
+Epoch 4 Val_accuracy 0.705 Val_loss 0.791
+Epoch 5 Val_accuracy 0.774 Val_loss 0.637
+Epoch 6 Val_accuracy 0.800 Val_loss 0.593
+Epoch 7 Val_accuracy 0.808 Val_loss 0.549
+Epoch 8 Val_accuracy 0.813 Val_loss 0.537
+Epoch 9 Val_accuracy 0.832 Val_loss 0.505
+Epoch 10 Val_accuracy 0.809 Val_loss 0.542
+Epoch 11 Val_accuracy 0.853 Val_loss 0.473
+Epoch 12 Val_accuracy 0.866 Val_loss 0.432
+Epoch 13 Val_accuracy 0.843 Val_loss 0.508
+Epoch 14 Val_accuracy 0.872 Val_loss 0.416
+Epoch 15 Val_accuracy 0.866 Val_loss 0.411
+Epoch 16 Val_accuracy 0.860 Val_loss 0.451
+Epoch 17 Val_accuracy 0.880 Val_loss 0.397
+Epoch 18 Val_accuracy 0.885 Val_loss 0.393
+Epoch 19 Val_accuracy 0.874 Val_loss 0.401
+Epoch 20 Val_accuracy 0.824 Val_loss 0.524
+Epoch 21 Val_accuracy 0.885 Val_loss 0.371
+Epoch 22 Val_accuracy 0.887 Val_loss 0.391
+Epoch 23 Val_accuracy 0.872 Val_loss 0.392
+Epoch 24 Val_accuracy 0.894 Val_loss 0.355
+Epoch 25 Val_accuracy 0.858 Val_loss 0.482
+Epoch 26 Val_accuracy 0.895 Val_loss 0.357
+Epoch 27 Val_accuracy 0.902 Val_loss 0.337
+Epoch 28 Val_accuracy 0.882 Val_loss 0.387
+Epoch 29 Val_accuracy 0.897 Val_loss 0.345
+Epoch 30 Val_accuracy 0.885 Val_loss 0.356
+Epoch 31 Val_accuracy 0.890 Val_loss 0.363
+Epoch 32 Val_accuracy 0.895 Val_loss 0.343
+Epoch 33 Val_accuracy 0.903 Val_loss 0.320
+Epoch 34 Val_accuracy 0.898 Val_loss 0.357
+Epoch 35 Val_accuracy 0.900 Val_loss 0.324
+Epoch 36 Val_accuracy 0.905 Val_loss 0.327
+Epoch 37 Val_accuracy 0.911 Val_loss 0.300
+Epoch 38 Val_accuracy 0.906 Val_loss 0.319
+Epoch 39 Val_accuracy 0.913 Val_loss 0.299
+Epoch 40 Val_accuracy 0.896 Val_loss 0.326
+Epoch 41 Val_accuracy 0.919 Val_loss 0.272
+Epoch 42 Val_accuracy 0.916 Val_loss 0.291
+Epoch 43 Val_accuracy 0.922 Val_loss 0.267
+Epoch 44 Val_accuracy 0.901 Val_loss 0.344
+Epoch 45 Val_accuracy 0.917 Val_loss 0.265
+Epoch 46 Val_accuracy 0.923 Val_loss 0.260
+Epoch 47 Val_accuracy 0.921 Val_loss 0.260
+Epoch 48 Val_accuracy 0.922 Val_loss 0.257
+Epoch 49 Val_accuracy 0.929 Val_loss 0.246
+acc: 0.9290
+NAR: 0.0052
+FNR: 0.0092
+[599 526 510 469 555 425]
+[589 502 506 451 546 490]
+precision_1: 0.962
+Recall_1: 0.978
+F1_1: 0.970
+precision_2: 0.901
+Recall_2: 0.944
+F1_2: 0.922
+precision_3: 0.925
+Recall_3: 0.933
+F1_3: 0.929
+precision_4: 0.883
+Recall_4: 0.918
+F1_4: 0.900
+precision_5: 0.942
+Recall_5: 0.958
+F1_5: 0.950
+train totally using %.3f seconds  2234.4257164001465
